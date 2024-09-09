@@ -40,7 +40,7 @@ function App() {
       content += component.outerHTML; // Combine the outerHTML of each element
     });
     localStorage.setItem("/"+routename, content);
-    if(value){
+    if(!!value){
       window.location.href = `/${routename}`;
     }
   };
@@ -101,7 +101,7 @@ function App() {
         )}
         </div>
         <div className='absolute right-5 top-5  flex gap-2'>
-        <button className='border border-teal-500 border-r-2 p-2' onClick={handleSavePage} >SAVE</button>
+        <button className='border border-teal-500 border-r-2 p-2' onClick={()=>handleSavePage(false)} >SAVE</button>
         <button className='border border-teal-500 border-r-2 p-2' onClick={()=>handleSavePage(true)} >SAVE AND PREVIEW</button>
         </div>
       </div>
