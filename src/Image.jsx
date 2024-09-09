@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Image() {
   const [content, setcontent] = useState("edit text");
-  const [url, seturl] = useState("/");
+  const [url, seturl] = useState(null);
   const [height, setheight] = useState();
   const [Width, setWidth] = useState();
   const [showSettings, setshowSettings] = useState(false);
@@ -19,7 +19,7 @@ function Image() {
   };
   return (
     <div className="m-5 border border-gray-500 relative min-h-[30px]">
-        <img className="ComponentMarcup" src={url} height={height} width={Width} />
+        {url?<img className="ComponentMarcup" src={url} height={height} width={Width} />:<p>edit url for image to have preview</p>}
       <button className="absolute top-0 right-2" onClick={() => setshowSettings(!showSettings)}>
         showsettings
       </button>
